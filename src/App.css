@@ -17,3 +17,131 @@ header{
   color: var(--font-color);
   background-color: var(--main-color);
 }
+
+a {
+  position: relative;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: var(--font-color);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+
+a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+
+button {
+  border: none;
+  box-shadow: inset 0 0 0 0 var(--font-color);
+  color: var(--main-color);
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
+}
+button:hover {
+  box-shadow: inset 0 200px  0 0 var(--font-color);
+  color: var(--main-color);
+}
+
+
+/* FORM STYLING FOR LOGIN REGISTER*/
+.form-body{
+  min-width: 100%;
+  min-height: 100vh;
+  background-image: url(../../../public/assets/pexels-inayê-freitas-15409298.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form-container{
+  border-radius: 10px;
+  background-color: white;
+  width: 60rem;
+  height: 60rem;
+  display: grid;
+  grid-template-rows: 0.4fr 1fr;
+  place-items: start center ;
+}
+
+.form-container h1{
+  font-size: 3rem;
+  font-weight: 400;
+
+}
+
+form{
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+form label{
+  margin-right:auto ;
+}
+
+form input , form button{
+  border-radius: 5px;
+}
+
+form input{
+  border: 1px solid var(--main-color);
+  height: 30px;
+  width: 500px;
+}
+
+form button{
+  background-color: white;
+  border: 1px solid var(--font-color);
+  cursor: pointer;
+  margin: 1rem;
+  width: 12rem;
+  height: 3rem;
+  font-size: 1.8rem;
+}
+
+
+
+input:invalid{
+  border: 1px solid  red;
+}
+
+input:valid{
+  border: 1px solid green;
+}
+
+input:empty{
+  border: 1px solid black;
+}
+
+.login-register-link{
+  color: var(--main-color);
+  font-size: 1.8rem;
+}
+
+@media (max-width:625px) {
+  .form-container{
+    width: 90vw;
+  }
+  form input{
+    width: 100%;
+  }
+}
