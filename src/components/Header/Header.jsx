@@ -5,6 +5,8 @@ export default function Header(){
         <>
         <header>
             <h1>Ma7al</h1>
+            <nav>
+            </nav>
         </header>
         </>
     )
